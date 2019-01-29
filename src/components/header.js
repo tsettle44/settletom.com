@@ -1,12 +1,12 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Container } from 'semantic-ui-react'
+import { Container, Button } from 'semantic-ui-react'
 
 const Header = ({ siteTitle }) => (
   <div
     style={{
-      background: `#490b72`,
+      background: `#591995`,
     }}
   >
     <Container
@@ -27,15 +27,17 @@ const Header = ({ siteTitle }) => (
           </span>{' '}
           {siteTitle}
         </Link>
-        <Link
-          style={{
-            float: 'right',
-            color: '#8440b2',
-            textDecoration: 'underline',
-          }}
-          to="/blog/"
-        >
-          Blog
+        <Link style={{ textDecoration: 'none' }} to="/blog/">
+          <Button
+            style={{
+              float: 'right',
+              fontSize: '1.25rem',
+              borderRadius: '1rem',
+            }}
+            inverted
+          >
+            Blog
+          </Button>
         </Link>
       </h1>
     </Container>

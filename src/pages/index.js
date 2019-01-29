@@ -2,8 +2,9 @@ import React from 'react'
 import 'semantic-ui-css/semantic.min.css'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Container, Header } from 'semantic-ui-react'
+import { Header } from 'semantic-ui-react'
 import Type from '../components/Type'
+import About from '../components/about'
 import posed from 'react-pose'
 import wave from '../images/wave.png'
 
@@ -30,10 +31,11 @@ class IndexPage extends React.Component {
           <div
             ref="canvas"
             style={{
-              backgroundImage: 'linear-gradient(to bottom, #490b72, #791bb7)',
+              backgroundImage: 'linear-gradient(to bottom, #591995, #8c43ff)',
               width: '100vw',
               height: '60vh',
               position: 'relative',
+              top: '-2px',
             }}
           >
             <div
@@ -64,15 +66,13 @@ class IndexPage extends React.Component {
                 margin: '0',
                 width: '100vw',
                 position: 'absolute',
-                bottom: '0',
+                bottom: '-2px',
               }}
               src={wave}
               alt="wave"
             />
           </div>
-          <Container>
-            <div />
-          </Container>
+          <About />
         </Layout>
       </Title>
     )
