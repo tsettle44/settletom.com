@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+http://confident-hoover-1d158a.netlify.com/* http://www.settletom.com/:splat 301!
