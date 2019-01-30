@@ -29,6 +29,7 @@ module.exports = {
         icon: `src/images/tom.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-graphcms`,
       options: {
