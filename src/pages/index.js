@@ -55,7 +55,9 @@ class IndexPage extends React.Component {
               >
                 tom settle
                 <br />
-                <div style={{ fontSize: '2rem' }} />
+                <div style={{ fontSize: '1.25rem', fontWeight: '0' }}>
+                  I code and design websites
+                </div>
               </Header>
             </div>
             <img
