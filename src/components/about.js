@@ -4,7 +4,7 @@ import { Container, Header, Grid, Icon } from 'semantic-ui-react'
 const About = () => (
   <div>
     <Container style={{ minHeight: '500px' }} textAlign="center">
-      <Grid style={{ marginBotton: '100px' }} centered columns={1}>
+      <Grid style={{ marginBotton: '200px' }} centered columns={1}>
         <Grid.Column textAlign="center">
           <Header
             style={{ color: '#8c43ff', marginTop: '5rem', fontSize: '3rem' }}
@@ -17,8 +17,8 @@ const About = () => (
             <p style={{ color: '#8c43ff', fontSize: '1.5rem' }}>
               I am a self taught full stack developer with experience in Mobile,
               Web and PWA. I am an addict to learning and helping others learn.
-              I currently work as a Technology Consultant and do freelance on
-              the side{' '}
+              I currently work as a Technology Consultant and do freelance
+              development on the side{' '}
               <span role="img" aria-label="peace">
                 😃
               </span>
@@ -28,7 +28,7 @@ const About = () => (
       </Grid>
     </Container>
     <div
-      style={{ width: '100vw', height: '700px', backgroundColor: '#8c43ff' }}
+      style={{ width: '100vw', minHeight: '700px', backgroundColor: '#8c43ff' }}
     >
       <Container>
         <Grid

@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Header } from 'semantic-ui-react'
 import About from '../components/about'
+import ContactLabel from '../components/contactLabel'
 import posed from 'react-pose'
 import wave from '../images/wave.png'
 
@@ -72,6 +73,7 @@ class IndexPage extends React.Component {
             />
           </div>
           <About />
+          <ContactLabel />
         </Layout>
       </Title>
     )
