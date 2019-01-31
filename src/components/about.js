@@ -48,7 +48,6 @@ const About = () => (
             style={{
               borderRight: '1px solid #e6ecf8',
               borderBottom: '1px solid #e6ecf8',
-              paddingTop: '20px',
             }}
             textAlign="center"
           >
@@ -62,7 +61,7 @@ const About = () => (
             >
               Backend Development
             </p>
-            <p style={{ marginTop: '25px', fontSize: '1rem' }}>
+            <p style={{ marginTop: '25px', fontSize: '1rem', padding: '15px' }}>
               Secure RESTful API's built to receive, send, update, and delete
               data that can be integrated with a client-side website and a
               database to securely save your data.
@@ -112,7 +111,7 @@ const About = () => (
             >
               Frontend Development
             </p>
-            <p style={{ marginTop: '25px', fontSize: '1rem' }}>
+            <p style={{ marginTop: '25px', fontSize: '1rem', padding: '15px' }}>
               I am a framework/library lover. Currently obsessed with React and
               Gatsby
               <br />
@@ -158,7 +157,7 @@ const About = () => (
             >
               Design
             </p>
-            <p style={{ marginTop: '25px', fontSize: '1rem' }}>
+            <p style={{ marginTop: '25px', fontSize: '1rem', padding: '15px' }}>
               I love to dabble in design and keep my mind creative. I have a
               great appreciaiton for simple website/app design and bright colors
               <br />

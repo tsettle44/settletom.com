@@ -17,6 +17,7 @@ const ContactLabel = () => (
             borderRadius: '50px',
             position: 'relative',
             bottom: '100px',
+            padding: '15px',
             backgroundColor: '#555',
             boxShadow:
               '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
