@@ -4,7 +4,7 @@ import { Grid, Container, Header, Button } from 'semantic-ui-react'
 
 const ContactLabel = () => (
   <div>
-    <div style={{ height: '200px', width: '100vw' }} />
+    <div style={{ height: '400px' }} />
     <div
       style={{ height: '200px', width: '100vw', backgroundColor: '#591995' }}
     >

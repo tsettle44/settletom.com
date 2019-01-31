@@ -1,8 +1,9 @@
 import React from 'react'
+import wave from '../images/wave.png'
 import { Container, Header, Grid, Icon } from 'semantic-ui-react'
 
 const About = () => (
-  <div>
+  <div style={{ position: 'relative' }}>
     <Container style={{ minHeight: '500px' }} textAlign="center">
       <Grid style={{ marginBotton: '200px' }} centered columns={1}>
         <Grid.Column textAlign="center">
@@ -28,7 +29,7 @@ const About = () => (
       </Grid>
     </Container>
     <div
-      style={{ width: '100vw', minHeight: '700px', backgroundColor: '#8c43ff' }}
+      style={{ width: '100vw', minHeight: '900px', backgroundColor: '#8c43ff' }}
     >
       <Container>
         <Grid
@@ -192,6 +193,17 @@ const About = () => (
         </Grid>
       </Container>
     </div>
+    <img
+      style={{
+        margin: '0',
+        width: '100vw',
+        position: 'absolute',
+        bottom: '0',
+        transform: 'scaleX(-1)',
+      }}
+      src={wave}
+      alt="wave"
+    />
   </div>
 )
 
