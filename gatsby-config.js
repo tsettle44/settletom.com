@@ -45,6 +45,7 @@ module.exports = {
               id
               createdAt
               title
+              preview
               authorPost {
                 id
                 name

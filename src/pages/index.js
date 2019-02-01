@@ -21,13 +21,22 @@ class IndexPage extends React.Component {
       this.setState({
         isVisible: true,
       })
-    }, 1000)
+    }, 500)
   }
   render() {
     return (
       <Title pose={this.state.isVisible ? 'visible' : 'hidden'}>
         <Layout>
-          <SEO title="Home" keywords={[`Tom Settle`, `Blog`, `Portfolio`]} />
+          <SEO
+            title="Home"
+            keywords={[
+              `Tom Settle`,
+              `Blog`,
+              `Portfolio`,
+              'Front-end Developer',
+              'Full-stack Developer',
+            ]}
+          />
           <div
             ref="canvas"
             style={{
@@ -57,7 +66,7 @@ class IndexPage extends React.Component {
                 tom settle
                 <br />
                 <div style={{ fontSize: '1.25rem', fontWeight: '0' }}>
-                  I code and design websites
+                  Full-stack Developer
                 </div>
               </Header>
             </div>

@@ -2,40 +2,31 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Container } from 'semantic-ui-react'
+import { Container, Icon, Image, Item, Label } from 'semantic-ui-react'
 
 const SecondPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Blog" />
-      <Container>
-        <h1>Hi welcome to the Blog</h1>
-        {data.allAuthor.edges.map((author, index) => (
-          <div style={{ marginBottom: '5rem' }} key={index}>
-            <img
-              style={{
-                height: '4rem',
-                borderRadius: '2rem',
-                display: 'inline',
-                float: 'left',
-              }}
-              src={author.node.avatar.url}
-              alt="Author Avatar"
-            />
-            <p>
-              Written by{' '}
-              <span style={{ fontWeight: '700' }}>{author.node.name} </span>
-              <br />
-              <span>{author.node.bibliography}</span>
-            </p>
-          </div>
-        ))}
-        {data.allPost.edges.map((post, index) => (
-          <Link key={index} to={`/blog/${post.node.slug}`}>
-            <h3>{post.node.title}</h3>
-            <p>{post.node.createdAt}</p>
-          </Link>
-        ))}
+      <Container style={{ paddingTop: '20px', fontSize: '1rem' }}>
+        <Item.Group link divided>
+          {data.allPost.edges.map((post, index) => (
+            <Item href={post.node.slug}>
+              <Item.Image size="small" src={post.node.coverImage.url} />
+
+              <Item.Content>
+                <Item.Header as="a">{post.node.title}</Item.Header>
+                <Item.Meta>{post.node.createdAt}</Item.Meta>
+                <Item.Description>{post.node.preview}</Item.Description>
+                <Item.Extra>
+                  {post.node.tags.map(tag => (
+                    <Label>{tag}</Label>
+                  ))}
+                </Item.Extra>
+              </Item.Content>
+            </Item>
+          ))}
+        </Item.Group>
       </Container>
     </Layout>
   )
@@ -48,8 +39,13 @@ export const query = graphql`
       edges {
         node {
           title
-          createdAt(formatString: "MM-DD-YYYY")
+          createdAt(formatString: "MMMM DD, YYYY")
           slug
+          preview
+          tags
+          coverImage {
+            url
+          }
           authorPost {
             name
           }
