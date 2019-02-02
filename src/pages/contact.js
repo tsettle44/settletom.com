@@ -30,24 +30,59 @@ const Contact = () => (
             >
               <input type="hidden" name="form-name" value="Contact Form" />
               <p>
-                <label>
-                  Your Name: <input type="text" name="name" />
-                </label>
+                <label>Your Name</label>
               </p>
               <p>
-                <label>
-                  Your Email: <input type="email" name="email" />
-                </label>
+                <input
+                  style={{
+                    border: '1px solid #e6ecf8',
+                    borderRadius: '5px',
+                    width: '100%',
+                  }}
+                  type="text"
+                  name="name"
+                />
               </p>
-
               <p>
-                <label>
-                  Message: <textarea name="message" />
-                </label>
+                <label>Your Email</label>
+              </p>
+              <p>
+                <input
+                  style={{
+                    border: '1px solid #e6ecf8',
+                    borderRadius: '5px',
+                    width: '100%',
+                  }}
+                  type="email"
+                  name="email"
+                />
+              </p>
+              <p>
+                <label>Message</label>
+              </p>
+              <p>
+                <textarea
+                  style={{
+                    border: '1px solid #e6ecf8',
+                    borderRadius: '5px',
+                    width: '100%',
+                  }}
+                  type="text"
+                  name="message"
+                />
               </p>
               <div data-netlify-recaptcha="true" />
-              <p>
-                <button type="submit">Send</button>
+              <p style={{ textAlign: 'center' }}>
+                <button
+                  style={{
+                    border: '1px solid #e6ecf8',
+                    borderRadius: '5px',
+                    padding: '10px',
+                  }}
+                  type="submit"
+                >
+                  Send
+                </button>
               </p>
             </form>
           </Grid.Column>
