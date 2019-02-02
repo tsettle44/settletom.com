@@ -23,7 +23,7 @@ const Contact = () => (
             <Form
               data-netlify="true"
               action="/success"
-              method="post"
+              method="POST"
               style={{ fontSize: '1.25rem', marginTop: '20px' }}
             >
               <Form.Field required>
@@ -42,6 +42,7 @@ const Contact = () => (
                 <label style={{ color: '#8c43ff' }}>Message</label>
                 <TextArea />
               </Form.Field>
+              <div data-netlify-recaptcha="true" />
               <Form.Field type="submit" control={Button} content="Send" />
             </Form>
           </Grid.Column>
