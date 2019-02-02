@@ -4,9 +4,17 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ReactMarkdown from 'react-markdown'
 import { Container, Label, Item } from 'semantic-ui-react'
+import { Disqus, DiscussionEmbed, CommentCount } from 'disqus-react'
 
 export default ({ data }) => {
   const post = data.post
+
+  const disqusShortname = 'settletom'
+  const disqusConfig = {
+    url: `https://www.settletom.com/blog/${post.slug}`,
+    identifier: post.id,
+    title: post.title,
+  }
 
   return (
     <Layout>
@@ -32,9 +40,10 @@ export default ({ data }) => {
             </Item.Content>
           </Item>
         </Item.Group>
-        <div>
+        <div style={{ marginBottom: '25px' }}>
           <ReactMarkdown source={post.content} escapeHtml={false} />
         </div>
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </Container>
     </Layout>
   )
@@ -43,6 +52,7 @@ export default ({ data }) => {
 export const query = graphql`
   query($slug: String!) {
     post(slug: { eq: $slug }) {
+      id
       title
       createdAt(formatString: "MMMM DD, YYYY, h:mm a")
       authorPost {
