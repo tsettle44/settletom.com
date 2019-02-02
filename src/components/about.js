@@ -198,7 +198,7 @@ const About = () => (
         margin: '0',
         width: '100vw',
         position: 'absolute',
-        bottom: '0',
+        bottom: '-2px',
         transform: 'scaleX(-1)',
       }}
       src={wave}

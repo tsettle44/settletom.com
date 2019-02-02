@@ -4,17 +4,9 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ReactMarkdown from 'react-markdown'
 import { Container, Label, Item } from 'semantic-ui-react'
-import { Disqus, DiscussionEmbed, CommentCount } from 'disqus-react'
 
 export default ({ data }) => {
   const post = data.post
-
-  const disqusShortname = 'settletom'
-  const disqusConfig = {
-    url: `https://www.settletom.com/blog/${post.slug}`,
-    identifier: post.id,
-    title: post.title,
-  }
 
   return (
     <Layout>
@@ -43,7 +35,6 @@ export default ({ data }) => {
         <div style={{ marginBottom: '25px' }}>
           <ReactMarkdown source={post.content} escapeHtml={false} />
         </div>
-        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </Container>
     </Layout>
   )
