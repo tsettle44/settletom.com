@@ -16,7 +16,7 @@ const SecondPage = ({ data }) => {
 
               <Item.Content>
                 <Item.Header as="a">{post.node.title}</Item.Header>
-                <Item.Meta>{post.node.createdAt}</Item.Meta>
+                <Item.Meta>{post.node.dateAndTime}</Item.Meta>
                 <Item.Description>{post.node.preview}</Item.Description>
                 <Item.Extra>
                   {post.node.tags.map(tag => (
@@ -39,7 +39,7 @@ export const query = graphql`
       edges {
         node {
           title
-          createdAt(formatString: "MMMM DD, YYYY")
+          dateAndTime(formatString: "MMMM DD, YYYY")
           slug
           preview
           tags

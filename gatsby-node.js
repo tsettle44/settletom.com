@@ -25,7 +25,7 @@ exports.createPages = ({ graphql, actions }) => {
               content
               slug
               tags
-              createdAt(formatString: "DD MM YYYY")
+              dateAndTime(formatString: "DD MM YYYY")
               id
               coverImage {
                 url

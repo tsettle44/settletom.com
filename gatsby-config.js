@@ -41,9 +41,9 @@ module.exports = {
       options: {
         endpoint: process.env.GATSBY_API_URL,
         query: `{
-            posts(orderBy: createdAt_DESC) {
+            posts(orderBy: dateAndTime_DESC) {
               id
-              createdAt
+              dateAndTime
               title
               preview
               authorPost {

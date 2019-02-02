@@ -26,7 +26,7 @@ export default ({ data }) => {
 
             <Item.Content>
               <Item.Header>{post.title}</Item.Header>
-              <Item.Meta>{post.createdAt}</Item.Meta>
+              <Item.Meta>{post.dateAndTime}</Item.Meta>
               <Item.Extra>
                 <Label image>
                   <img alt="Author Picture" src={post.authorPost.avatar.url} />
@@ -53,7 +53,7 @@ export const query = graphql`
     post(slug: { eq: $slug }) {
       id
       title
-      createdAt(formatString: "MMMM DD, YYYY, h:mm a")
+      dateAndTime(formatString: "MMMM DD, YYYY, h:mm a")
       authorPost {
         name
         avatar {

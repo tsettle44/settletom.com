@@ -2,7 +2,7 @@ import React from 'react'
 import 'semantic-ui-css/semantic.min.css'
 import { Container, Icon, Button } from 'semantic-ui-react'
 
-const Footer = ({ siteTitle }) => (
+const Footer = () => (
   <div
     style={{
       background: `#591995`,
