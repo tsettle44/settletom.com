@@ -20,7 +20,11 @@ const Contact = () => (
             <h2 style={{ textAlign: 'center', color: '#8c43ff' }}>
               Contact Me
             </h2>
-            <Form netlify style={{ fontSize: '1.25rem', marginTop: '20px' }}>
+            <Form
+              netlify
+              method="post"
+              style={{ fontSize: '1.25rem', marginTop: '20px' }}
+            >
               <Form.Field required>
                 <label style={{ color: '#8c43ff' }}>First Name</label>
                 <input placeholder="First Name" />
