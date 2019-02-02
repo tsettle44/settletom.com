@@ -20,31 +20,33 @@ const Contact = () => (
             <h2 style={{ textAlign: 'center', color: '#8c43ff' }}>
               Contact Me
             </h2>
-            <Form
+            <form
               data-netlify="true"
               action="/success"
               method="POST"
               style={{ fontSize: '1.25rem', marginTop: '20px' }}
             >
-              <Form.Field required>
-                <label style={{ color: '#8c43ff' }}>First Name</label>
-                <input placeholder="First Name" />
-              </Form.Field>
-              <Form.Field required>
-                <label style={{ color: '#8c43ff' }}>Last Name</label>
-                <input placeholder="Last Name" />
-              </Form.Field>
-              <Form.Field required>
-                <label style={{ color: '#8c43ff' }}>Email</label>
-                <input type="email" placeholder="joe.schmoe.com" />
-              </Form.Field>
-              <Form.Field required id="form-textarea-control-opinion">
-                <label style={{ color: '#8c43ff' }}>Message</label>
-                <TextArea />
-              </Form.Field>
+              <p>
+                <label>
+                  Your Name: <input type="text" name="name" />
+                </label>
+              </p>
+              <p>
+                <label>
+                  Your Email: <input type="email" name="email" />
+                </label>
+              </p>
+
+              <p>
+                <label>
+                  Message: <textarea name="message" />
+                </label>
+              </p>
               <div data-netlify-recaptcha="true" />
-              <Form.Field type="submit" control={Button} content="Send" />
-            </Form>
+              <p>
+                <button type="submit">Send</button>
+              </p>
+            </form>
           </Grid.Column>
         </Grid>
       </Container>
