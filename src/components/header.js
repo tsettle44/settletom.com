@@ -1,4 +1,5 @@
 import { Link } from 'gatsby'
+import 'semantic-ui-css/semantic.min.css'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Container, Button } from 'semantic-ui-react'
