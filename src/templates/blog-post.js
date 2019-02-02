@@ -12,7 +12,14 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={post.title} />
-      <Container style={{ padding: '50px', fontSize: '1.25rem' }}>
+      <Container
+        style={{
+          marginBottom: '50px',
+          marginTop: '50px',
+          padding: '10px',
+          fontSize: '1.25rem',
+        }}
+      >
         <Item.Group>
           <Item>
             <Item.Image src={post.coverImage.url} alt="Cover Image" />

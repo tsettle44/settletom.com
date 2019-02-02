@@ -66,7 +66,7 @@ class IndexPage extends React.Component {
                 tom settle
                 <br />
                 <div style={{ fontSize: '1.25rem', fontWeight: '0' }}>
-                  Full-stack Developer
+                  21 yr old, Full-stack Developer
                 </div>
               </Header>
             </div>

@@ -6,7 +6,7 @@ const Footer = ({ siteTitle }) => (
   <div
     style={{
       background: `#591995`,
-      height: '200px',
+      height: '220px',
     }}
   >
     <Container
@@ -79,6 +79,15 @@ const Footer = ({ siteTitle }) => (
           href="https://www.gatsbyjs.org"
         >
           Gatsby
+        </a>
+      </p>
+      <p>
+        <Icon inverted name="github" color="white" />
+        <a
+          style={{ color: 'white', textDecoration: 'underline' }}
+          href="https://github.com/tsettle44/gatsbySite"
+        >
+          View Source
         </a>
       </p>
     </Container>
