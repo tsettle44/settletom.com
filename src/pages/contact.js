@@ -21,7 +21,8 @@ const Contact = () => (
               Contact Me
             </h2>
             <Form
-              netlify
+              data-netlify="true"
+              action="/success"
               method="post"
               style={{ fontSize: '1.25rem', marginTop: '20px' }}
             >
