@@ -27,6 +27,7 @@ const Contact = () => (
               method="POST"
               style={{ fontSize: '1.25rem', marginTop: '20px' }}
             >
+              <input type="hidden" name="form-name" value="contact" />
               <p>
                 <label>
                   Your Name: <input type="text" name="name" />
