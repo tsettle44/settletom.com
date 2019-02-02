@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ReactMarkdown from 'react-markdown'
-import { Container, Label, Image, Item } from 'semantic-ui-react'
+import { Container, Label, Item } from 'semantic-ui-react'
 
 export default ({ data }) => {
   const post = data.post
@@ -11,28 +11,28 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={post.title} />
-      <Container style={{ padding: '50px' }}>
+      <Container style={{ padding: '50px', fontSize: '1.25rem' }}>
         <Item.Group>
           <Item>
-            <Item.Image src={post.coverImage.url} />
+            <Item.Image src={post.coverImage.url} alt="Cover Image" />
 
             <Item.Content>
               <Item.Header>{post.title}</Item.Header>
               <Item.Meta>{post.createdAt}</Item.Meta>
               <Item.Extra>
                 <Label image>
-                  <img src={post.authorPost.avatar.url} />
+                  <img alt="Author Picture" src={post.authorPost.avatar.url} />
                   {post.authorPost.name}
                 </Label>
                 <br />
-                {post.tags.map(tag => (
-                  <Label>{tag}</Label>
+                {post.tags.map((tag, i) => (
+                  <Label key={i}>{tag}</Label>
                 ))}
               </Item.Extra>
             </Item.Content>
           </Item>
         </Item.Group>
-        <div style={{ fontSize: '1.25rem' }}>
+        <div>
           <ReactMarkdown source={post.content} escapeHtml={false} />
         </div>
       </Container>

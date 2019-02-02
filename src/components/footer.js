@@ -23,7 +23,6 @@ const Footer = ({ siteTitle }) => (
         <Button inverted circular style={{ padding: '10px' }}>
           <Icon
             style={{ margin: '0', padding: '0' }}
-            color="white"
             name="instagram"
             size="large"
           />
@@ -38,7 +37,6 @@ const Footer = ({ siteTitle }) => (
         <Button inverted circular style={{ padding: '10px' }}>
           <Icon
             style={{ margin: '0', padding: '0' }}
-            color="white"
             name="twitter"
             size="large"
           />
@@ -53,7 +51,6 @@ const Footer = ({ siteTitle }) => (
         <Button inverted circular style={{ padding: '10px' }}>
           <Icon
             style={{ margin: '0', padding: '0' }}
-            color="white"
             name="medium m"
             size="large"
           />
@@ -68,7 +65,6 @@ const Footer = ({ siteTitle }) => (
         <Button inverted circular style={{ padding: '10px' }}>
           <Icon
             style={{ margin: '0', padding: '0' }}
-            color="white"
             name="linkedin"
             size="large"
           />
