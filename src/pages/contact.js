@@ -21,6 +21,7 @@ const Contact = () => (
               Contact Me
             </h2>
             <form
+              name="Contact Form"
               data-netlify="true"
               action="/success"
               method="POST"
