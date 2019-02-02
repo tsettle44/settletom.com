@@ -2,12 +2,15 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { TextArea } from 'semantic-ui-react'
 
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div style={{ height: '100vh', textAlign: 'center', marginTop: '100px' }}>
+      <h1>NOT FOUND</h1>
+      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    </div>
   </Layout>
 )
 

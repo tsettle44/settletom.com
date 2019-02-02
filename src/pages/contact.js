@@ -1,14 +1,14 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Container, Grid, Button, Form, TextArea } from 'semantic-ui-react'
+import { Container, Grid } from 'semantic-ui-react'
 
 const Contact = () => (
   <Layout>
     <SEO title="Contact" />
     <div style={{ height: '100vh' }}>
       <Container style={{ paddingTop: '50px' }}>
-        <Grid centered columns={2}>
+        <Grid style={{ padding: '20px' }} centered columns={1}>
           <Grid.Column
             style={{
               border: '1px solid #e6ecf8',
