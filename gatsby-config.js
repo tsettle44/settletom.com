@@ -73,6 +73,15 @@ module.exports = {
                 createdAt
               }
             }
+            projects {
+              id
+              name
+              displayImage {
+                url
+              }
+              description
+              link
+            }
         }`,
       },
     },

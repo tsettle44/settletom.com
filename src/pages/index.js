@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Header } from 'semantic-ui-react'
 import About from '../components/about'
+import Work from '../components/work'
 import ContactLabel from '../components/contactLabel'
 import posed from 'react-pose'
 import wave from '../images/wave.png'
@@ -23,6 +24,7 @@ class IndexPage extends React.Component {
       })
     }, 500)
   }
+
   render() {
     return (
       <Title pose={this.state.isVisible ? 'visible' : 'hidden'}>
@@ -82,6 +84,7 @@ class IndexPage extends React.Component {
             />
           </div>
           <About />
+          <Work />
           <ContactLabel />
         </Layout>
       </Title>

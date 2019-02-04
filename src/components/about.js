@@ -131,7 +131,7 @@ const About = () => (
             <p>React</p>
             <p>HTML</p>
             <p>CSS</p>
-            <p>Vanila JavaScript</p>
+            <p>JavaScript</p>
             <p
               style={{
                 marginTop: '25px',

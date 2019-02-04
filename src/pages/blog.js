@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import 'semantic-ui-css/semantic.min.css'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -33,7 +34,7 @@ const SecondPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query data {
+  query {
     allPost {
       totalCount
       edges {

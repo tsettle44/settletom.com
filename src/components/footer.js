@@ -82,7 +82,7 @@ const Footer = () => (
         </a>
       </p>
       <p>
-        <Icon inverted name="github" color="white" />
+        <Icon inverted name="github" />
         <a
           style={{ color: 'white', textDecoration: 'underline' }}
           href="https://github.com/tsettle44/gatsbySite"
