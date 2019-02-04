@@ -14,6 +14,7 @@ const Work = () => {
                 name
                 description
                 link
+                sourceCode
                 displayImage {
                   url
                 }
@@ -62,7 +63,7 @@ const Work = () => {
                           <p
                             style={{
                               padding: '10px',
-                              paddingTop: '50px',
+                              paddingTop: '30px',
                               color: 'white',
                               fontSize: '1.1rem',
                             }}
@@ -80,6 +81,18 @@ const Work = () => {
                           >
                             View Site
                           </Button>
+                          <p style={{ marginTop: '5px' }}>
+                            <a
+                              style={{
+                                color: 'white',
+                                textDecoration: 'underline',
+                              }}
+                              target="_blank"
+                              href={project.node.sourceCode}
+                            >
+                              Source Code
+                            </a>
+                          </p>
                         </div>
                       </Reveal.Content>
                     </Reveal>
@@ -87,6 +100,17 @@ const Work = () => {
                 ))}
               </Grid.Row>
             </Grid>
+            <div style={{ marginTop: '50px', textAlign: 'center' }}>
+              <Button
+                target="_blank"
+                href="https://github.com/tsettle44"
+                inverted
+                color="violet"
+                style={{ fontSize: '1.25rem', borderRadius: '10px' }}
+              >
+                See more on Github
+              </Button>
+            </div>
           </Container>
         </div>
       )}
