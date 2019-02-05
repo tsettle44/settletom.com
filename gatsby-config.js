@@ -43,6 +43,7 @@ module.exports = {
         query: `{
             posts(orderBy: dateAndTime_DESC) {
               id
+              status
               dateAndTime
               title
               preview

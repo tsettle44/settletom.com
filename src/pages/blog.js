@@ -11,22 +11,26 @@ const SecondPage = ({ data }) => {
       <SEO title="Blog" />
       <Container style={{ paddingTop: '20px', fontSize: '1rem' }}>
         <Item.Group link divided>
-          {data.allPost.edges.map((post, index) => (
-            <Item key={index} href={post.node.slug}>
-              <Item.Image size="small" src={post.node.coverImage.url} />
+          {data.allPost.edges.map((post, index) => {
+            if (post.node.status === 'PUBLISHED') {
+              return (
+                <Item key={index} href={post.node.slug}>
+                  <Item.Image size="small" src={post.node.coverImage.url} />
 
-              <Item.Content>
-                <Item.Header as="a">{post.node.title}</Item.Header>
-                <Item.Meta>{post.node.dateAndTime}</Item.Meta>
-                <Item.Description>{post.node.preview}</Item.Description>
-                <Item.Extra>
-                  {post.node.tags.map(tag => (
-                    <Label>{tag}</Label>
-                  ))}
-                </Item.Extra>
-              </Item.Content>
-            </Item>
-          ))}
+                  <Item.Content>
+                    <Item.Header as="a">{post.node.title}</Item.Header>
+                    <Item.Meta>{post.node.dateAndTime}</Item.Meta>
+                    <Item.Description>{post.node.preview}</Item.Description>
+                    <Item.Extra>
+                      {post.node.tags.map(tag => (
+                        <Label>{tag}</Label>
+                      ))}
+                    </Item.Extra>
+                  </Item.Content>
+                </Item>
+              )
+            }
+          })}
         </Item.Group>
       </Container>
     </Layout>
@@ -39,6 +43,7 @@ export const query = graphql`
       totalCount
       edges {
         node {
+          status
           title
           dateAndTime(formatString: "MMMM DD, YYYY")
           slug
