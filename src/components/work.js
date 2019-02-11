@@ -77,6 +77,7 @@ const Work = () => {
                             }}
                             inverted
                             target="_blank"
+                            rel="noopener noreferrer"
                             href={project.node.link}
                           >
                             View Site
@@ -88,6 +89,7 @@ const Work = () => {
                                 textDecoration: 'underline',
                               }}
                               target="_blank"
+                              rel="noopener noreferrer"
                               href={project.node.sourceCode}
                             >
                               Source Code
@@ -103,6 +105,7 @@ const Work = () => {
             <div style={{ marginTop: '50px', textAlign: 'center' }}>
               <Button
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://github.com/tsettle44"
                 inverted
                 color="violet"

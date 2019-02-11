@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ReactMarkdown from 'react-markdown'
 import { Container, Label, Item } from 'semantic-ui-react'
+import './blog.css'
 
 export default ({ data }) => {
   const post = data.post
