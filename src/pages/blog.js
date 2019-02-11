@@ -19,7 +19,9 @@ const SecondPage = ({ data }) => {
 
                   <Item.Content>
                     <Item.Header as="a">{post.node.title}</Item.Header>
-                    <Item.Meta>{post.node.dateAndTime}</Item.Meta>
+                    <Item.Meta>
+                      {post.node.dateAndTime} -- {post.node.readTime} read
+                    </Item.Meta>
                     <Item.Description>{post.node.preview}</Item.Description>
                     <Item.Extra>
                       {post.node.tags.map(tag => (
@@ -45,6 +47,7 @@ export const query = graphql`
         node {
           status
           title
+          readTime
           dateAndTime(formatString: "MMMM DD, YYYY")
           slug
           preview

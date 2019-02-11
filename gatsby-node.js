@@ -21,6 +21,7 @@ exports.createPages = ({ graphql, actions }) => {
           edges {
             node {
               title
+              readTime
               preview
               content
               slug

@@ -46,6 +46,7 @@ module.exports = {
               status
               dateAndTime
               title
+              readTime
               preview
               authorPost {
                 id
