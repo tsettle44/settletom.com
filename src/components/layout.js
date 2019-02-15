@@ -18,7 +18,10 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header
+          blog={window.location.pathname == '/blog/' ? true : false}
+          siteTitle={data.site.siteMetadata.title}
+        />
         <div>
           {children}
           <Footer />

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Container, Button } from 'semantic-ui-react'
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, blog }) => (
   <div
     style={{
       background: `#591995`,
@@ -35,6 +35,7 @@ const Header = ({ siteTitle }) => (
               fontSize: '1.25rem',
               borderRadius: '1rem',
             }}
+            active={blog}
             inverted
           >
             Blog
@@ -47,10 +48,12 @@ const Header = ({ siteTitle }) => (
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  blog: PropTypes.bool,
 }
 
 Header.defaultProps = {
   siteTitle: ``,
+  blog: false,
 }
 
 export default Header

@@ -8,7 +8,7 @@ const About = () => (
       <Grid style={{ marginBotton: '200px' }} centered columns={1}>
         <Grid.Column textAlign="center">
           <Header
-            style={{ color: '#8c43ff', marginTop: '5rem', fontSize: '3rem' }}
+            style={{ color: '#555555', marginTop: '5rem', fontSize: '3rem' }}
           >
             Hi, I'm Tom
           </Header>

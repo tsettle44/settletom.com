@@ -2,7 +2,7 @@
   "name": "settletom",
   "private": true,
   "description": "my website.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Tom Settle",
   "dependencies": {
     "gatsby": "^2.0.106",
