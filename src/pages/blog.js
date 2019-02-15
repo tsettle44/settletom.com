@@ -24,8 +24,8 @@ const SecondPage = ({ data }) => {
                     </Item.Meta>
                     <Item.Description>{post.node.preview}</Item.Description>
                     <Item.Extra>
-                      {post.node.tags.map(tag => (
-                        <Label>{tag}</Label>
+                      {post.node.tags.map((tag, i) => (
+                        <Label key={i}>{tag}</Label>
                       ))}
                     </Item.Extra>
                   </Item.Content>

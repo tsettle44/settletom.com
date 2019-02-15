@@ -38,6 +38,17 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    // {
+    //   resolve: 'gatsby-source-graphql',
+    //   options: {
+    //     // This type will contain remote schema Query type
+    //     typeName: 'Blog',
+    //     // This is field under which it's accessible
+    //     fieldName: 'blog',
+    //     // Url to query from
+    //     url: process.env.GATSBY_API_URL,
+    //   },
+    // },
     {
       resolve: `gatsby-source-graphcms`,
       options: {
