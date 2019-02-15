@@ -18,7 +18,7 @@ const SecondPage = ({ data }) => {
                   <Item.Image size="small" src={post.node.coverImage.url} />
 
                   <Item.Content>
-                    <Item.Header as="a">{post.node.title}</Item.Header>
+                    <Item.Header>{post.node.title}</Item.Header>
                     <Item.Meta>
                       {post.node.dateAndTime} -- {post.node.readTime} read
                     </Item.Meta>

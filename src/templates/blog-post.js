@@ -40,9 +40,7 @@ export default ({ data }) => {
             </Item.Content>
           </Item>
         </Item.Group>
-        <div style={{ marginBottom: '25px' }}>
-          <ReactMarkdown source={post.content} escapeHtml={false} />
-        </div>
+        <ReactMarkdown source={post.content} escapeHtml={false} />
       </Container>
     </Layout>
   )
