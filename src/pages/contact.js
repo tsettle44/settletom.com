@@ -67,6 +67,8 @@ const Contact = () => (
                     border: '1px solid #e6ecf8',
                     borderRadius: '5px',
                     width: '100%',
+                    maxWidth: '100%',
+                    minHeight: '100px',
                   }}
                   type="text"
                   name="message"
@@ -76,9 +78,11 @@ const Contact = () => (
               <p style={{ textAlign: 'center' }}>
                 <button
                   style={{
-                    border: '1px solid #e6ecf8',
+                    border: '1px solid #8c43ff',
+                    color: '#8c43ff',
+                    backgroundColor: 'white',
                     borderRadius: '5px',
-                    padding: '10px',
+                    padding: '10px 20px',
                   }}
                   type="submit"
                 >
