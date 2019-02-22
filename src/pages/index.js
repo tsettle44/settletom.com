@@ -6,6 +6,7 @@ import { Header } from 'semantic-ui-react'
 import About from '../components/about'
 import Work from '../components/work'
 import ContactLabel from '../components/contactLabel'
+import ThreeBlog from '../components/threeBlog'
 import posed from 'react-pose'
 import wave from '../images/wave.png'
 
@@ -85,6 +86,7 @@ class IndexPage extends React.Component {
           </div>
           <About />
           <Work />
+          <ThreeBlog />
           <ContactLabel />
         </Layout>
       </Title>
