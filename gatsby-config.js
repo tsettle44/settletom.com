@@ -1,9 +1,9 @@
 require('dotenv').config({ path: './.env.development' })
 module.exports = {
   siteMetadata: {
-    title: `tom settle`,
-    description: `This is a site about tom settle`,
-    author: `tom settle`,
+    title: `Tom Settle`,
+    description: `This is a site about Tom Settle`,
+    author: `Tom Settle`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
