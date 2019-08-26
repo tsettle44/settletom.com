@@ -15,7 +15,7 @@ const SecondPage = ({ data }) => {
             if (post.node.status === 'PUBLISHED') {
               return (
                 <Item key={index} href={post.node.slug}>
-                  <Item.Image size="small" src={post.node.coverImage.url} style={{objectFit: 'cover'}} />
+                  <Item.Image size="small" src={post.node.coverImage.url} />
 
                   <Item.Content>
                     <Item.Header>{post.node.title}</Item.Header>
