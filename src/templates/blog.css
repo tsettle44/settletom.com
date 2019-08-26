@@ -1,13 +1,14 @@
 code {
   background-color: #f7f7f7;
   font-size: 0.9rem !important;
-  display: inline-block;
+  display: inline;
   width: 100%;
 }
 
 pre {
   white-space: pre-wrap;
   background-color: #f7f7f7;
+  display: inline-block;
 }
 
 img {
