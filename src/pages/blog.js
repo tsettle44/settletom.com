@@ -4,6 +4,7 @@ import 'semantic-ui-css/semantic.min.css'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Container, Item, Label } from 'semantic-ui-react'
+import "./blog.css"
 
 const SecondPage = ({ data }) => {
   return (
