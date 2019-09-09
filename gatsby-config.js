@@ -6,6 +6,13 @@ module.exports = {
     author: `tom settle`,
   },
   plugins: [
+    {
+      resolve: `@lekoarts/gatsby-theme-emilia`,
+      options: {
+        mdx: true,
+        basePath: `/photos`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -101,6 +108,7 @@ module.exports = {
         }`,
       },
     },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
