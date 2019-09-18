@@ -4,7 +4,12 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ReactMarkdown from 'react-markdown'
 import { Container, Label, Item } from 'semantic-ui-react'
+import Prism from 'prismjs'
+import 'prismjs/themes/prism-tomorrow.css'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 import './blog.css'
+
+Prism.highlightAll()
 
 export default ({ data }) => {
   const post = data.post

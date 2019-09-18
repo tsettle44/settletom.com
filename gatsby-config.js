@@ -6,13 +6,6 @@ module.exports = {
     author: `Tom Settle`,
   },
   plugins: [
-    {
-      resolve: `@lekoarts/gatsby-theme-emilia`,
-      options: {
-        mdx: true,
-        basePath: `/photos`,
-      },
-    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -29,7 +22,7 @@ module.exports = {
         head: false,
       },
     },
-    `gatsby-transformer-remark`,
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -106,6 +99,20 @@ module.exports = {
               sourceCode
             }
         }`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              aliases: { sh: 'bash', js: 'javascript' },
+              showLineNumbers: true,
+            },
+          },
+        ],
       },
     },
 
