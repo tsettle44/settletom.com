@@ -5,5 +5,5 @@
   </a>
 </p>
 <h1 align="center">
-  My website - dev built on Gatsby.js
+  My website built on Gatsby.js
 </h1>

@@ -22,7 +22,7 @@ module.exports = {
         head: false,
       },
     },
-    `gatsby-transformer-remark`,
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -101,6 +101,21 @@ module.exports = {
         }`,
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              aliases: { sh: 'bash', js: 'javascript' },
+              showLineNumbers: true,
+            },
+          },
+        ],
+      },
+    },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
