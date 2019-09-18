@@ -4,12 +4,8 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ReactMarkdown from 'react-markdown'
 import { Container, Label, Item } from 'semantic-ui-react'
-import Prism from 'prismjs'
-import 'prismjs/themes/prism-tomorrow.css'
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
-import './blog.css'
 
-Prism.highlightAll()
+import './blog.css'
 
 export default ({ data }) => {
   const post = data.post
@@ -27,14 +23,14 @@ export default ({ data }) => {
       >
         <Item.Group>
           <Item>
-            <Item.Image src={post.coverImage.url} alt="Cover Image" />
+            <Item.Image src={post.coverImage.url} alt="Cover" />
 
             <Item.Content>
               <Item.Header>{post.title}</Item.Header>
               <Item.Meta>{post.dateAndTime}</Item.Meta>
               <Item.Extra>
                 <Label image>
-                  <img alt="Author Picture" src={post.authorPost.avatar.url} />
+                  <img alt="Author" src={post.authorPost.avatar.url} />
                   {post.authorPost.name}
                 </Label>
                 <br />

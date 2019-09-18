@@ -4,7 +4,7 @@ import 'semantic-ui-css/semantic.min.css'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Container, Item, Label } from 'semantic-ui-react'
-import "./blog.css"
+import './blog.css'
 
 const SecondPage = ({ data }) => {
   return (
@@ -32,6 +32,8 @@ const SecondPage = ({ data }) => {
                   </Item.Content>
                 </Item>
               )
+            } else {
+              return null
             }
           })}
         </Item.Group>
