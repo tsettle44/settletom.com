@@ -1,9 +1,9 @@
-require('dotenv').config({ path: './.env.development' })
+require("dotenv").config({ path: "./.env.development" });
 module.exports = {
   siteMetadata: {
     title: `Tom Settle`,
     description: `This is a site about Tom Settle`,
-    author: `Tom Settle`,
+    author: `Tom Settle`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -11,16 +11,16 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
-        path: `${__dirname}/src`,
-      },
+        path: `${__dirname}/src`
+      }
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-134285442-1',
+        trackingId: "UA-134285442-1",
         // Puts tracking script in the head instead of the body
-        head: false,
-      },
+        head: false
+      }
     },
 
     `gatsby-transformer-sharp`,
@@ -34,8 +34,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/tom.png`, // This path is relative to the root of the site.
-      },
+        icon: `src/images/tom.png` // This path is relative to the root of the site.
+      }
     },
     `gatsby-plugin-offline`,
     // {
@@ -98,26 +98,11 @@ module.exports = {
               link
               sourceCode
             }
-        }`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              aliases: { sh: 'bash', js: 'javascript' },
-              showLineNumbers: true,
-            },
-          },
-        ],
-      },
-    },
-
+        }`
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
-  ],
-}
+  ]
+};

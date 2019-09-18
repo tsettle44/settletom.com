@@ -1,8 +1,8 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import 'semantic-ui-css/semantic.min.css'
 import wave from '../images/wave.png'
-import { Container, Card, Grid, Image, Label } from 'semantic-ui-react'
+import { Container, Card, Grid, Image, Button, Label } from 'semantic-ui-react'
 
 const threeBlog = () => {
   return (
