@@ -7,7 +7,7 @@ import { Container, Label, Item } from 'semantic-ui-react'
 
 import './blog.css'
 
-export default ({ data }) => {
+export default ({ data, markdown }) => {
   const post = data.post
 
   return (
