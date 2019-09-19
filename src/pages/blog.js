@@ -37,6 +37,8 @@ const SecondPage = ({ data }) => {
                   </Item.Content>
                 </Item>
               )
+            } else {
+              return null
             }
           })}
         </Item.Group>
