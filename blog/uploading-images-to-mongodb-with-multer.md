@@ -4,7 +4,7 @@ date: 2019-09-05T06:00:00.000Z
 title: Uploading Images to MongoDB with Multer
 readTime: 15 min
 author: Tom Settle
-authorImage: “/assets/img_3915.jpg”
+authorImage: /assets/img_3915.jpg
 coverImage: /assets/mongo.png
 preview: >-
   Nowadays basic CRUD functionality is used in basically every application on
