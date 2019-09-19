@@ -8,7 +8,10 @@ const Work = () => {
     <StaticQuery
       query={graphql`
         query project {
-          allMarkdownRemark {
+          allMarkdownRemark(
+            sort: { fields: frontmatter___displayImage }
+            limit: 3
+          ) {
             nodes {
               frontmatter {
                 displayImage
