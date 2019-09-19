@@ -12,7 +12,7 @@ const threeBlog = () => {
           allMarkdownRemark(
             limit: 3
             sort: { fields: frontmatter___date, order: DESC }
-            skip: 1
+            skip: 3
           ) {
             nodes {
               frontmatter {
