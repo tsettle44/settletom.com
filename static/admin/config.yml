@@ -14,4 +14,14 @@ collections:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
+      - { name: author, label: Author, default: Tom Settle }
+      - {
+          name: authorImage,
+          label: Author Image,
+          widget: image,
+          default: “/assets/img_3915.jpg”,
+        }
+      - { name: coverImage, label: Cover Image, widget: image }
+      - { name: preview, label: Preview }
+      - { name: tags, label: Tags, widget: list }
       - { name: body, label: Body, widget: markdown }
