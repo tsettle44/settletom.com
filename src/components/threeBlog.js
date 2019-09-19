@@ -8,18 +8,16 @@ const threeBlog = () => {
   return (
     <StaticQuery
       query={graphql`
-        query three {
-          allPost(limit: 3) {
-            edges {
-              node {
-                title
-                slug
+        query blog {
+          allMarkdownRemark(limit: 3, sort: { fields: frontmatter___tags }) {
+            nodes {
+              frontmatter {
+                coverImage
+                path
                 preview
                 readTime
                 tags
-                coverImage {
-                  url
-                }
+                title
               }
             }
           }
@@ -58,7 +56,7 @@ const threeBlog = () => {
                 divided="vertically"
               >
                 <Grid.Row columns={3}>
-                  {data.allPost.edges.map((post, index) => (
+                  {data.allMarkdownRemark.nodes.map((post, index) => (
                     <Grid.Column key={index}>
                       <Card
                         style={{
@@ -68,20 +66,24 @@ const threeBlog = () => {
                           boxShadow:
                             '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
                         }}
-                        href={`/blog/${post.node.slug}`}
+                        href={`/blog/${post.frontmatter.slug}`}
                       >
-                        <Image src={post.node.coverImage.url} />
+                        <Image src={post.frontmatter.coverImage} />
                         <Card.Content>
-                          <Card.Header>{post.node.title}</Card.Header>
-                          <Card.Meta>Read Time: {post.node.readTime}</Card.Meta>
+                          <Card.Header>{post.frontmatter.title}</Card.Header>
+                          <Card.Meta>
+                            Read Time: {post.frontmatter.readTime}
+                          </Card.Meta>
                           <Card.Description>
-                            {post.node.preview}
+                            {post.frontmatter.preview}
                           </Card.Description>
                         </Card.Content>
                         <Card.Content extra>
-                          {post.node.tags.map((tag, i) => (
-                            <Label key={i}>{tag}</Label>
-                          ))}
+                          {post.frontmatter.tags
+                            ? post.frontmatter.tags.map((tag, i) => (
+                                <Label key={i}>{tag}</Label>
+                              ))
+                            : null}
                         </Card.Content>
                       </Card>
                     </Grid.Column>

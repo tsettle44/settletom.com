@@ -8,16 +8,14 @@ const Work = () => {
     <StaticQuery
       query={graphql`
         query project {
-          allProject {
-            edges {
-              node {
+          allMarkdownRemark {
+            nodes {
+              frontmatter {
+                displayImage
                 name
                 description
-                link
                 sourceCode
-                displayImage {
-                  url
-                }
+                link
               }
             }
           }
@@ -36,7 +34,7 @@ const Work = () => {
             </div>
             <Grid stackable style={{ marginTop: '50px' }} divided="vertically">
               <Grid.Row columns={3}>
-                {data.allProject.edges.map((project, index) => (
+                {data.allMarkdownRemark.nodes.map((project, index) => (
                   <Grid.Column key={index}>
                     <Reveal
                       style={{
@@ -50,7 +48,7 @@ const Work = () => {
                       <Reveal.Content visible>
                         <Image
                           style={{ margin: '0' }}
-                          src={project.node.displayImage.url}
+                          src={project.frontmatter.displayImage}
                         />
                       </Reveal.Content>
                       <Reveal.Content hidden>
@@ -68,7 +66,7 @@ const Work = () => {
                               fontSize: '1.1rem',
                             }}
                           >
-                            {project.node.description}
+                            {project.frontmatter.description}
                           </p>
                           <Button
                             style={{
@@ -78,7 +76,7 @@ const Work = () => {
                             inverted
                             target="_blank"
                             rel="noopener noreferrer"
-                            href={project.node.link}
+                            href={project.frontmatter.link}
                           >
                             View Site
                           </Button>
@@ -90,7 +88,7 @@ const Work = () => {
                               }}
                               target="_blank"
                               rel="noopener noreferrer"
-                              href={project.node.sourceCode}
+                              href={project.frontmatter.sourceCode}
                             >
                               Source Code
                             </a>

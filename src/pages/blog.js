@@ -15,26 +15,29 @@ const SecondPage = ({ data }) => {
       <Container style={{ paddingTop: '20px', fontSize: '1rem' }}>
         <Item.Group link divided>
           {allMarkdownRemark.nodes.map((post, index) => {
-            return (
-              <Item key={index} href={post.frontmatter.path}>
-                <Item.Image size="small" src={post.frontmatter.coverImage} />
+            if (post.frontmatter.tags) {
+              return (
+                <Item key={index} href={post.frontmatter.path}>
+                  <Item.Image size="small" src={post.frontmatter.coverImage} />
 
-                <Item.Content>
-                  <Item.Header>{post.frontmatter.title}</Item.Header>
-                  <Item.Meta>
-                    {post.frontmatter.date} -- {post.frontmatter.readTime} read
-                  </Item.Meta>
-                  <Item.Description>
-                    {post.frontmatter.preview}
-                  </Item.Description>
-                  <Item.Extra>
-                    {post.frontmatter.tags.map((tag, i) => (
-                      <Label key={i}>{tag}</Label>
-                    ))}
-                  </Item.Extra>
-                </Item.Content>
-              </Item>
-            )
+                  <Item.Content>
+                    <Item.Header>{post.frontmatter.title}</Item.Header>
+                    <Item.Meta>
+                      {post.frontmatter.date} -- {post.frontmatter.readTime}{' '}
+                      read
+                    </Item.Meta>
+                    <Item.Description>
+                      {post.frontmatter.preview}
+                    </Item.Description>
+                    <Item.Extra>
+                      {post.frontmatter.tags.map((tag, i) => (
+                        <Label key={i}>{tag}</Label>
+                      ))}
+                    </Item.Extra>
+                  </Item.Content>
+                </Item>
+              )
+            }
           })}
         </Item.Group>
       </Container>
