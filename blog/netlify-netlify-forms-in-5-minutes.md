@@ -18,6 +18,7 @@ tags:
   - JavaScript
   - Tutorial
 ---
+
 ## Netlifiy + Gatsby is a beautiful match ❤️
 
 In many websites these days we see contact forms. Netlify offers form functionality that is **super** easy to add to any forms that will then be saved on Netlifys servers and viewable to you in many ways. This is great for any data that you are grabbing off of your site through forms.
@@ -48,19 +49,22 @@ I am going to describe this using vanilla **HTML **and as well as **JSX **with R
 
 This is super straightforward on the form that you want to collect the data from all you have to do is add the `netlify` or `data-netlify="true"` attribute to the `<form></form>` tag. Netlify docs give this example.
 
-```
+```html
 <form name="contact" method="POST" data-netlify="true">
   <p>
-    <label>Your Name: <input type="text" name="name" /></label>   
+    <label>Your Name: <input type="text" name="name"/></label>
   </p>
   <p>
-    <label>Your Email: <input type="email" name="email" /></label>
+    <label>Your Email: <input type="email" name="email"/></label>
   </p>
   <p>
-    <label>Your Role: <select name="role[]" multiple>
-      <option value="leader">Leader</option>
-      <option value="follower">Follower</option>
-    </select></label>
+    <label
+      >Your Role:
+      <select name="role[]" multiple>
+        <option value="leader">Leader</option>
+        <option value="follower">Follower</option>
+      </select></label
+    >
   </p>
   <p>
     <label>Message: <textarea name="message"></textarea></label>
@@ -88,25 +92,32 @@ Netlify published a blog post that describes the process in great detail [here](
 The summary though is that the hidden input field is key when rendering the HTML via a React Component.
 
 For example...
-```
-      ReactDOM.render(
-        <form name="contact" method="post">
-          <input type="hidden" name="form-name" value="contact" />
-          <p>
-            <label>Your Name: <input type="text" name="name"/></label>
-          </p>
-          <p>
-            <label>Your Email: <input type="email" name="email"/></label>
-          </p>
-          <p>
-            <label>Message: <textarea name="message"></textarea></label>
-          </p>
-          <p>
-            <button type="submit">Send</button>
-          </p>
-        </form>,
-        document.getElementById("root")
-      );
+
+```jsx
+ReactDOM.render(
+  <form name="contact" method="post">
+    <input type="hidden" name="form-name" value="contact" />
+    <p>
+      <label>
+        Your Name: <input type="text" name="name" />
+      </label>
+    </p>
+    <p>
+      <label>
+        Your Email: <input type="email" name="email" />
+      </label>
+    </p>
+    <p>
+      <label>
+        Message: <textarea name="message"></textarea>
+      </label>
+    </p>
+    <p>
+      <button type="submit">Send</button>
+    </p>
+  </form>,
+  document.getElementById('root')
+)
 ```
 
 The first input field that is hidden is what will make this work.

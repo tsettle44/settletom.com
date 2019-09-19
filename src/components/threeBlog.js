@@ -9,7 +9,11 @@ const threeBlog = () => {
     <StaticQuery
       query={graphql`
         query blog {
-          allMarkdownRemark(limit: 3, sort: { fields: frontmatter___tags }) {
+          allMarkdownRemark(
+            limit: 3
+            sort: { fields: frontmatter___date, order: DESC }
+            skip: 1
+          ) {
             nodes {
               frontmatter {
                 coverImage

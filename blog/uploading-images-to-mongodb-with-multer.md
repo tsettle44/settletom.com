@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 path: /blog/uploading-images-to-mongodb-with-multer
 date: 2019-09-05T06:00:00.000Z
@@ -22,30 +21,6 @@ tags:
   - MongoDB
 ---
 
-=======
----
-path: /blog/uploading-images-to-mongodb-with-multer
-date: 2019-09-05T06:00:00.000Z
-title: Uploading Images to MongoDB with Multer
-readTime: 15 min
-author: Tom Settle
-authorImage: /assets/img_3915.jpg
-coverImage: /assets/mongo.png
-preview: >-
-  Nowadays basic CRUD functionality is used in basically every application on
-  the web. Most know how easy it is to store basic data types in databases, but
-  with the more apps, I have built the more I have seen how prevalent media
-  types are in database storage and how most apps could put use to them. So
-  let's look at how we can store a single image or multiple images in a database
-  and then retrieve them to display...
-tags:
-  - Tutorial
-  - Node.js
-  - JavaScript
-  - Express
-  - MongoDB
----
->>>>>>> 498d4bd0d43bc625b510fdcc0df74ed2707c84c5
 Nowadays basic CRUD functionality is used in basically every application on the web. Most know how easy it is to store basic data types in databases, but with the more apps I have built the more I have seen how prevalent media types are in database storage and how most apps could put use to them. So let's look at how we can store a single image or multiple images in a database and then retrieve them to display.
 
 ## Technologies

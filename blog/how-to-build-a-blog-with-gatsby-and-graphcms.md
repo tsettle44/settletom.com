@@ -17,6 +17,7 @@ tags:
   - JavaScript
   - GraphCMS
 ---
+
 ## I want to show you how easy it can be to create an extremely fast and customizable blog site using some of the newest and greatest technologies in JavaScript today.
 
 ### Technologies we will be using
@@ -28,9 +29,10 @@ tags:
 
 ### 1. Getting Started (Installations)
 
-We will be installing all packages using npm so please make sure you have Node.js installed and updated; you can do so here if you have not. --  [Node.js](https://nodejs.org/en/)
+We will be installing all packages using npm so please make sure you have Node.js installed and updated; you can do so here if you have not. -- [Node.js](https://nodejs.org/en/)
 
 Next, we will install and use the Gatsby CLI, this is a great tool that lets us do everything we need to do with Gatsby including creating a new site from a template or completely from scratch.
+
 #### **Gatsby CLI**
 
 Open your terminal of choice and enter
@@ -56,11 +58,13 @@ That was super easy... this blog site is using static markdown files that are sa
 ### 2. Setting up and Plugins
 
 #### **First lets do some cleanup**
+
 Starting with the author header, let's go ahead and update that without information. This will also give you a better idea of how the file structure works.
 
 Navigate to `gatsby.config.js`
 
 The top of the file shows an object called **siteMetadata** this is where the bio page is pulling the data from so go ahead and update your information here
+
 ```javascript
 siteMetadata: {
     title: 'Gatsby Starter Blog',
@@ -73,8 +77,9 @@ siteMetadata: {
   }
 ```
 
-Go ahead and save `gatsby.config.js` and navigate to 
-``` javascript
+Go ahead and save `gatsby.config.js` and navigate to
+
+```
 -- src
   |-- components
      |-- Bio.js
@@ -85,6 +90,7 @@ At the bottom of the file the `const bioQuery` is the GraphQL query that is runn
 Great! now our bio component is updated. Next, let's go ahead and connect GraphCMS and get some dynamic blog posts in there.
 
 #### **Connect GraphCMS**
+
 <br>
 Create a GraphCMS account or login [here](https://graphcms.com/)
 <br>
@@ -113,8 +119,9 @@ Next, we will go ahead and add some dummy posts. Rather than quickly writing up 
 When finished your Post content should have three published blogs. To check that your API is working you can use GraphCMS's native GraphQL playground called API Explorer.
 <br>
 Try the query.
-```
-{ 
+
+```graphql
+{
   posts {
     title
     slug
@@ -123,6 +130,7 @@ Try the query.
   }
 }
 ```
+
 This should return all your posts and each field that we queried for in our GraphQL request!
 <br>
 <br>
@@ -135,7 +143,8 @@ In order to connect our CMS we need to install a plugin to our client-side Gatsb
 With this plugin, we can add some simple code into the `gatsby-config.js` file and boom that API data is now accessible on our client.
 
 Add this object to your plugins array.
-```
+
+```js
     {
       resolve: `gatsby-source-graphcms`,
       options: {
@@ -153,6 +162,7 @@ Add this object to your plugins array.
       },
     },
 ```
+
 Replacing the `graphql_endpoint` with the respective string from your GraphCMS Dashboard.
 
 #### **Creating pages**
@@ -161,14 +171,14 @@ Once the sire renders we want to create pages and paths for each blog post using
 
 Go ahead and replace the `gatbsy.node.js` file with this code.
 
-```
-const path = require(`path`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
+```js
+const path = require(`path`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`);
+  const blogPost = path.resolve(`./src/templates/blog-post.js`)
   return graphql(
     `
       {
@@ -183,16 +193,15 @@ exports.createPages = ({ graphql, actions }) => {
     `
   ).then(result => {
     if (result.errors) {
-      throw result.errors;
+      throw result.errors
     }
 
     // Create blog posts pages.
-    const posts = result.data.allPost.edges;
+    const posts = result.data.allPost.edges
 
     posts.forEach((post, index) => {
-      const previous =
-        index === posts.length - 1 ? null : posts[index + 1].node;
-      const next = index === 0 ? null : posts[index - 1].node;
+      const previous = index === posts.length - 1 ? null : posts[index + 1].node
+      const next = index === 0 ? null : posts[index - 1].node
 
       createPage({
         path: post.node.slug,
@@ -200,26 +209,25 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           slug: post.node.slug,
           previous,
-          next
-        }
-      });
-    });
-  });
-};
+          next,
+        },
+      })
+    })
+  })
+}
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
+  const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
+    const value = createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,
       node,
-      value
-    });
+      value,
+    })
   }
-};
-
+}
 ```
 
 This will like I said create a page for each of the blog posts using the slug as the path name!
@@ -230,7 +238,7 @@ Lastly, let's go ahead and update `index.js` to query from our API and display t
 
 At the bottom of the file, let's replace the `const pageQuery` with our query.
 
-```
+```js
 export const pageQuery = graphql`
   query {
     site {
@@ -250,32 +258,34 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
 ```
 
 Next lets update the JSX to render that data. Replce the `const post` with `const post = data.allPost.edges`
 <br>
 Then lastly, replace the post.map function with this...
 
-```
-    {posts.map(({ node }) => {
-          const title = node.title || node.slug;
-          return (
-            <div key={node.id}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4)
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.date}</small>
-              <p>{node.preview}</p>
-            </div>
-          );
-        })}
+```jsx
+{
+  posts.map(({ node }) => {
+    const title = node.title || node.slug
+    return (
+      <div key={node.id}>
+        <h3
+          style={{
+            marginBottom: rhythm(1 / 4),
+          }}
+        >
+          <Link style={{ boxShadow: `none` }} to={node.slug}>
+            {title}
+          </Link>
+        </h3>
+        <small>{node.date}</small>
+        <p>{node.preview}</p>
+      </div>
+    )
+  })
+}
 ```
 
 And Boom refresh and we have our homepage should now be populated with the data from our CMS!
@@ -286,7 +296,7 @@ Awesome, so the last thing we have to do is update the `blog-post.js` so when we
 <br>
 Navigate to `blog-post.js` and replace the query at the bottom with...
 
-```
+```js
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
@@ -304,12 +314,12 @@ export const pageQuery = graphql`
       body
     }
   }
-`;
+`
 ```
 
 Next replace the `render()` statement with...
 
-```
+```jsx
 render() {
     const post = this.props.data.post;
     const siteTitle = this.props.data.site.siteMetadata.title;
