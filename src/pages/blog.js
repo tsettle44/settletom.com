@@ -7,34 +7,34 @@ import { Container, Item, Label } from 'semantic-ui-react'
 import './blog.css'
 
 const SecondPage = ({ data }) => {
+  const { allMarkdownRemark } = data
+
   return (
     <Layout>
       <SEO title="Blog" />
       <Container style={{ paddingTop: '20px', fontSize: '1rem' }}>
         <Item.Group link divided>
-          {data.allPost.edges.map((post, index) => {
-            if (post.node.status === 'PUBLISHED') {
-              return (
-                <Item key={index} href={post.node.slug}>
-                  <Item.Image size="small" src={post.node.coverImage.url} />
+          {allMarkdownRemark.nodes.map((post, index) => {
+            return (
+              <Item key={index} href={post.frontmatter.path}>
+                <Item.Image size="small" src={post.frontmatter.coverImage} />
 
-                  <Item.Content>
-                    <Item.Header>{post.node.title}</Item.Header>
-                    <Item.Meta>
-                      {post.node.dateAndTime} -- {post.node.readTime} read
-                    </Item.Meta>
-                    <Item.Description>{post.node.preview}</Item.Description>
-                    <Item.Extra>
-                      {post.node.tags.map((tag, i) => (
-                        <Label key={i}>{tag}</Label>
-                      ))}
-                    </Item.Extra>
-                  </Item.Content>
-                </Item>
-              )
-            } else {
-              return null
-            }
+                <Item.Content>
+                  <Item.Header>{post.frontmatter.title}</Item.Header>
+                  <Item.Meta>
+                    {post.frontmatter.date} -- {post.frontmatter.readTime} read
+                  </Item.Meta>
+                  <Item.Description>
+                    {post.frontmatter.preview}
+                  </Item.Description>
+                  <Item.Extra>
+                    {post.frontmatter.tags.map((tag, i) => (
+                      <Label key={i}>{tag}</Label>
+                    ))}
+                  </Item.Extra>
+                </Item.Content>
+              </Item>
+            )
           })}
         </Item.Group>
       </Container>
@@ -44,35 +44,20 @@ const SecondPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allPost {
-      totalCount
-      edges {
-        node {
-          status
-          title
-          readTime
-          dateAndTime(formatString: "MMMM DD, YYYY")
-          slug
+    allMarkdownRemark {
+      nodes {
+        frontmatter {
+          author
+          authorImage
+          coverImage
+          date(formatString: "MMMM DD, YYYY")
+          path
           preview
+          readTime
           tags
-          coverImage {
-            url
-          }
-          authorPost {
-            name
-          }
+          title
         }
-      }
-    }
-    allAuthor {
-      edges {
-        node {
-          name
-          avatar {
-            url
-          }
-          bibliography
-        }
+        html
       }
     }
   }

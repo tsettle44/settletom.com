@@ -1,4 +1,3 @@
-require('dotenv').config({ path: './.env.development' })
 module.exports = {
   siteMetadata: {
     title: `Tom Settle`,
@@ -10,8 +9,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src`,
+        name: `blog`,
+        path: `${__dirname}/blog`,
       },
     },
     {
@@ -23,7 +22,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify-cms`,
-    `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
     {
@@ -39,71 +37,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    // {
-    //   resolve: 'gatsby-source-graphql',
-    //   options: {
-    //     // This type will contain remote schema Query type
-    //     typeName: 'Blog',
-    //     // This is field under which it's accessible
-    //     fieldName: 'blog',
-    //     // Url to query from
-    //     url: process.env.GATSBY_API_URL,
-    //   },
-    // },
-    {
-      resolve: `gatsby-source-graphcms`,
-      options: {
-        endpoint: process.env.GATSBY_API_URL,
-        query: `{
-            posts(orderBy: dateAndTime_DESC) {
-              id
-              status
-              dateAndTime
-              title
-              readTime
-              preview
-              authorPost {
-                id
-                name
-                avatar {
-                  url
-                }
-              }
-              slug
-              content
-              tags
-              coverImage {
-                url
-              }
-            },
-            authors {
-              id
-              name
-              bibliography
-              avatar {
-                url
-              }
-              posts {
-                slug
-                title
-                createdAt
-              }
-            }
-            projects {
-              id
-              name
-              displayImage {
-                url
-              }
-              description
-              link
-              sourceCode
-            }
-        }`,
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
   ],
 }

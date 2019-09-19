@@ -1,64 +1,38 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require(`path`)
 
-// You can delete this file if you're not using it
-const path = require('path')
-
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  return new Promise((resolve, reject) => {
-    const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
-    // Query for markdown nodes to use in creating pages.
-    // You can query for whatever data you want to create pages for e.g.
-    // products, portfolio items, landing pages, etc.
-    graphql(`
-      {
-        allPost {
-          totalCount
-          edges {
-            node {
-              title
-              readTime
-              preview
-              content
-              slug
-              tags
-              dateAndTime(formatString: "DD MM YYYY")
-              id
-              coverImage {
-                url
-              }
-              authorPost {
-                id
-                name
-                avatar {
-                  url
-                }
-              }
+
+  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
+
+  const result = await graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              path
             }
           }
         }
       }
-    `).then(result => {
-      if (result.errors) {
-        throw result.errors
-      }
+    }
+  `)
 
-      // Create blog post pages.
-      result.data.allPost.edges.forEach(post => {
-        createPage({
-          // Path for this page — required
-          path: `/blog/${post.node.slug}`,
-          component: blogPostTemplate,
-          context: {
-            slug: post.node.slug,
-          },
-        })
-      })
-      resolve()
+  // Handle errors
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: blogPostTemplate,
+      context: {}, // additional data can be passed via context
     })
   })
 }
