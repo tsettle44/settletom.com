@@ -7,4 +7,7 @@ link: 'https://tsettle44.github.io/thing-list/'
 sourceCode: 'https://github.com/tsettle44/thing-list'
 displayImage: /assets/thinglist.png
 ---
+<<<<<<< HEAD
+=======
 
+>>>>>>> cb24b97c051ee260131e69f727b598eb823483a5
