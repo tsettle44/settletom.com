@@ -14,6 +14,7 @@ collections:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
+      - { name: readTime, label: Read Time }
       - { name: author, label: Author, default: Tom Settle }
       - {
           name: authorImage,
@@ -25,3 +26,13 @@ collections:
       - { name: preview, label: Preview }
       - { name: tags, label: Tags, widget: list }
       - { name: body, label: Body, widget: markdown }
+  - name: projects
+    label: Projects
+    folder: projects
+    create: true
+    fields:
+      - { name: name, label: name }
+      - { name: description, label: Description }
+      - { name: link, label: Link }
+      - { name: sourceCode, label: Source Code }
+      - { name: displayImage, label: Display Image, widget: image }
