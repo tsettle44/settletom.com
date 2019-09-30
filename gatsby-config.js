@@ -70,6 +70,12 @@ module.exports = {
         icon: `src/images/tom.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `settletom`,
+      },
+    },
     `gatsby-plugin-offline`,
   ],
 }

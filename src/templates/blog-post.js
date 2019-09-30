@@ -1,24 +1,31 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { Container, Label, Item } from "semantic-ui-react"
+import React from 'react'
+import { graphql } from 'gatsby'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import { Container, Label, Item } from 'semantic-ui-react'
+import { Disqus } from 'gatsby-plugin-disqus'
 
-import "./blog.css"
+import './blog.css'
 
 export default ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
+
+  let disqusConfig = {
+    url: `https://www.settletom.com${frontmatter.path}`,
+    identifier: frontmatter.title,
+    title: frontmatter.title,
+  }
 
   return (
     <Layout>
       <SEO title={frontmatter.title} />
       <Container
         style={{
-          marginBottom: "50px",
-          marginTop: "50px",
-          padding: "10px",
-          fontSize: "1.25rem",
+          marginBottom: '50px',
+          marginTop: '50px',
+          padding: '10px',
+          fontSize: '1.25rem',
         }}
       >
         <Item.Group>
@@ -45,6 +52,8 @@ export default ({ data }) => {
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
+
+        <Disqus config={disqusConfig} />
       </Container>
     </Layout>
   )
@@ -62,6 +71,7 @@ export const query = graphql`
         coverImage
         preview
         tags
+        path
       }
     }
   }
