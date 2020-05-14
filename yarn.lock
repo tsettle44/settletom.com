@@ -2434,7 +2434,7 @@ acorn@^6.1.1, acorn@^6.4.1:
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
 
-acorn@^7.0.0, acorn@^7.1.1, acorn@^7.2.0:
+acorn@^7.1.1, acorn@^7.2.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.2.0.tgz#17ea7e40d7c8640ff54a694c889c26f31704effe"
 
@@ -6319,7 +6319,7 @@ gatsby-graphiql-explorer@^0.4.1:
   dependencies:
     "@babel/runtime" "^7.9.6"
 
-gatsby-image@^2.0.29:
+gatsby-image@^2.4.3:
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.4.3.tgz#7fbc957382bfab39ab0e7b9e12c063cea6c0d4c6"
   dependencies:
@@ -6348,21 +6348,21 @@ gatsby-page-utils@^0.2.2:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-disqus@^1.1.2:
+gatsby-plugin-disqus@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-disqus/-/gatsby-plugin-disqus-1.1.4.tgz#1b0bd7c13551ccbca15203af5be52ce4a72d3295"
   dependencies:
     babel-preset-gatsby-package "^0.1.2"
     cross-env "^5.2.0"
 
-gatsby-plugin-google-analytics@^2.0.13:
+gatsby-plugin-google-analytics@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.3.1.tgz#c86a4c9c31a3ad51123cbf1508e629072a7e1c5a"
   dependencies:
     "@babel/runtime" "^7.9.6"
     minimatch "3.0.4"
 
-gatsby-plugin-manifest@^2.2.17:
+gatsby-plugin-manifest@^2.4.3:
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.4.3.tgz#7d6e25609a59ba2ae8abc9881fa8abbc44e44d79"
   dependencies:
@@ -6371,7 +6371,7 @@ gatsby-plugin-manifest@^2.2.17:
     semver "^5.7.1"
     sharp "^0.25.1"
 
-gatsby-plugin-netlify-cms@^4.1.16:
+gatsby-plugin-netlify-cms@^4.3.2:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms/-/gatsby-plugin-netlify-cms-4.3.2.tgz#8137f83d1ba92b080c851f3495a2951d255ee7b3"
   dependencies:
@@ -6408,13 +6408,13 @@ gatsby-plugin-page-creator@^2.3.2:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-react-helmet@^3.0.2:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.0.5.tgz#eaeca7c83c6c273d31454598949dd0d3b4ff5f31"
+gatsby-plugin-react-helmet@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.3.1.tgz#e1600bdcf575250707281a85024d10b1ee64048a"
   dependencies:
-    "@babel/runtime" "^7.0.0"
+    "@babel/runtime" "^7.9.6"
 
-gatsby-plugin-sharp@^2.2.24:
+gatsby-plugin-sharp@^2.6.3:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.6.3.tgz#c152d051f23372270f731f1de5df92f8eb15f8ee"
   dependencies:
@@ -6526,7 +6526,7 @@ gatsby-recipes@^0.1.19:
     ws "^7.3.0"
     xstate "^4.9.1"
 
-gatsby-remark-prismjs@^3.3.13:
+gatsby-remark-prismjs@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.5.1.tgz#d71d3a180653f1182531175054e7256418cab2b6"
   dependencies:
@@ -6534,7 +6534,7 @@ gatsby-remark-prismjs@^3.3.13:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
-gatsby-source-filesystem@^2.1.24:
+gatsby-source-filesystem@^2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.3.3.tgz#16a7be93c577da11137654cd04d4bcf0c73c1867"
   dependencies:
@@ -6554,7 +6554,7 @@ gatsby-source-filesystem@^2.1.24:
     valid-url "^1.0.9"
     xstate "^4.9.1"
 
-gatsby-source-graphql@^2.0.10:
+gatsby-source-graphql@^2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/gatsby-source-graphql/-/gatsby-source-graphql-2.5.1.tgz#2d9412059b6f64eb3292ec3c7b3ca3dfe0743e2a"
   dependencies:
@@ -6590,7 +6590,7 @@ gatsby-telemetry@^1.3.4:
     stack-utils "1.0.2"
     uuid "3.4.0"
 
-gatsby-transformer-remark@^2.6.23:
+gatsby-transformer-remark@^2.8.8:
   version "2.8.8"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.8.8.tgz#90c348f23e72c650eec9b821962fc6db1410d1f0"
   dependencies:
@@ -6616,7 +6616,7 @@ gatsby-transformer-remark@^2.6.23:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.4.1"
 
-gatsby@^2.15.18:
+gatsby@^2.21.31:
   version "2.21.31"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.21.31.tgz#dd8c71c224062307968a3eb508d1f19aad2e9dcd"
   dependencies:
@@ -9729,7 +9729,7 @@ neo-async@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
 
-netlify-cms-app@^2.9.7:
+netlify-cms-app@^2.12.12:
   version "2.12.12"
   resolved "https://registry.yarnpkg.com/netlify-cms-app/-/netlify-cms-app-2.12.12.tgz#ab7ce66d10c529dacea70751341314a3bc1ea4e5"
   dependencies:
@@ -11378,7 +11378,7 @@ prepend-http@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
 
-prettier@^1.18.2:
+prettier@^1.19.1:
   version "1.19.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
 
@@ -11410,11 +11410,11 @@ pretty-format@^25.5.0:
     ansi-styles "^4.0.0"
     react-is "^16.12.0"
 
-prism-themes@^1.1.0:
+prism-themes@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/prism-themes/-/prism-themes-1.4.0.tgz#2f93a33450532577c7962928655d7b4305fa843d"
 
-prismjs@^1.17.1:
+prismjs@^1.20.0:
   version "1.20.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.20.0.tgz#9b685fc480a3514ee7198eac6a3bf5024319ff03"
   optionalDependencies:
@@ -11752,7 +11752,7 @@ react-dnd@^7.3.2:
     invariant "^2.1.0"
     shallowequal "^1.1.0"
 
-react-dom@^16.8.4, react-dom@^16.9.0:
+react-dom@^16.13.1, react-dom@^16.8.4:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
   dependencies:
@@ -11847,7 +11847,7 @@ react-polyglot@^0.6.0:
     hoist-non-react-statics "^2.5.0"
     prop-types "^15.5.8"
 
-react-pose@^4.0.8:
+react-pose@^4.0.10:
   version "4.0.10"
   resolved "https://registry.yarnpkg.com/react-pose/-/react-pose-4.0.10.tgz#fde1c6c388ec210f7099dfe2b8dd2f89a75db7d0"
   dependencies:
@@ -12023,7 +12023,7 @@ react-window@^1.8.5:
     "@babel/runtime" "^7.0.0"
     memoize-one ">=3.1.1 <6"
 
-react@^16.8.0, react@^16.8.4, react@^16.9.0:
+react@^16.13.1, react@^16.8.0, react@^16.8.4:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   dependencies:
