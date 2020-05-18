@@ -37,3 +37,14 @@ collections:
       - { name: link, label: Link }
       - { name: sourceCode, label: Source Code }
       - { name: displayImage, label: Display Image, widget: image }
+  - name: albums
+    label: Albums
+    folder: albums
+    create: true
+    identifier_field: name
+    fields:
+      - { name: name, label: name }
+      - { name: description, label: Description }
+      - { name: path, label: path }
+      - { name: displayImage, label: Display Image, widget: image }
+      - { name: body, label: Body, widget: markdown }
