@@ -1,5 +1,5 @@
 ---
-path: gatsby-image-with-contentful-cms
+path: /blog/gatsby-image-with-contentful-cms
 date: 2020-07-12T03:22:22.262Z
 title: Using gatsby-image with Contentful
 readTime: 5 min
