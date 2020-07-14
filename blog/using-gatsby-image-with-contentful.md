@@ -5,7 +5,7 @@ title: Using gatsby-image with Contentful
 readTime: 5 min
 author: Tom Settle
 authorImage: assets/img_3915.jpg
-coverImage: assets/contentful.png
+coverImage: assets/contentful.jpg
 preview: Recently I have been building a new site similar to a blog-style site
   (more of a news site), and am of course using Gatsby and then switching my CMS
   to the more popular Contentful...
