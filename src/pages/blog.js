@@ -32,7 +32,9 @@ const SecondPage = ({ data }) => {
                     <Item.Meta>
                       {post.node.date} -- {post.node.readTime} read
                     </Item.Meta>
-                    <Item.Description>{post.node.preview}</Item.Description>
+                    <Item.Description>
+                      {post.node.preview.preview}
+                    </Item.Description>
                     <Item.Extra>
                       {post.node.tags.map((tag, i) => (
                         <Label key={i}>{tag}</Label>
@@ -70,6 +72,9 @@ export const query = graphql`
             fluid {
               ...GatsbyContentfulFluid
             }
+          }
+          preview {
+            preview
           }
           date(formatString: "MMMM Do, YYYY")
           readTime
