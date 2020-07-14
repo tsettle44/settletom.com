@@ -2,26 +2,33 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import 'semantic-ui-css/semantic.min.css'
 import wave from '../images/wave.png'
-import { Container, Card, Grid, Image, Label } from 'semantic-ui-react'
+import { Container, Card, Grid, Label } from 'semantic-ui-react'
+import Img from 'gatsby-image'
 
 const threeBlog = () => {
   return (
     <StaticQuery
       query={graphql`
         query blog {
-          allMarkdownRemark(
-            limit: 3
-            sort: { fields: frontmatter___date, order: DESC }
-            skip: 3
-          ) {
-            nodes {
-              frontmatter {
-                coverImage
-                path
-                preview
-                readTime
-                tags
+          allContentfulBlog(limit: 3, sort: { fields: date, order: DESC }) {
+            edges {
+              node {
                 title
+                tags
+                slug
+                coverImage {
+                  title
+                  file {
+                    url
+                  }
+                  fluid {
+                    ...GatsbyContentfulFluid
+                  }
+                }
+                preview {
+                  preview
+                }
+                readTime
               }
             }
           }
@@ -60,31 +67,34 @@ const threeBlog = () => {
                 divided="vertically"
               >
                 <Grid.Row columns={3}>
-                  {data.allMarkdownRemark.nodes.map((post, index) => (
+                  {data.allContentfulBlog.edges.map((post, index) => (
                     <Grid.Column key={index}>
                       <Card
                         style={{
                           width: '95%',
                           margin: '0 auto',
-                          minHeight: '470px',
+                          height: '500px',
                           boxShadow:
                             '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
                         }}
-                        href={post.frontmatter.path}
+                        href={`/blog/${post.node.slug}`}
                       >
-                        <Image src={post.frontmatter.coverImage} />
+                        <Img
+                          style={{ height: '185px' }}
+                          key={post.node.coverImage.title}
+                          fluid={post.node.coverImage.fluid}
+                        ></Img>
+
                         <Card.Content>
-                          <Card.Header>{post.frontmatter.title}</Card.Header>
-                          <Card.Meta>
-                            Read Time: {post.frontmatter.readTime}
-                          </Card.Meta>
+                          <Card.Header>{post.node.title}</Card.Header>
+                          <Card.Meta>Read Time: {post.node.readTime}</Card.Meta>
                           <Card.Description>
-                            {post.frontmatter.preview}
+                            {post.node.preview.preview}
                           </Card.Description>
                         </Card.Content>
                         <Card.Content extra>
-                          {post.frontmatter.tags
-                            ? post.frontmatter.tags.map((tag, i) => (
+                          {post.node.tags
+                            ? post.node.tags.map((tag, i) => (
                                 <Label key={i}>{tag}</Label>
                               ))
                             : null}

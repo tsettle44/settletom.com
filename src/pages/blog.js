@@ -4,33 +4,37 @@ import 'semantic-ui-css/semantic.min.css'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Container, Item, Label } from 'semantic-ui-react'
+import Img from 'gatsby-image'
 import './blog.css'
 
 const SecondPage = ({ data }) => {
-  const { allMarkdownRemark } = data
-
   return (
     <Layout>
       <SEO title="Blog" />
-      <Container style={{ paddingTop: '20px', fontSize: '1rem' }}>
+      <Container
+        style={{ paddingTop: '20px', fontSize: '1rem', paddingBottom: '20px' }}
+      >
         <Item.Group link divided>
-          {allMarkdownRemark.nodes.map((post, index) => {
-            if (post.frontmatter.tags) {
+          {data.allContentfulBlog.edges.map((post, index) => {
+            if (post.node.tags) {
               return (
-                <Item key={index} href={post.frontmatter.path}>
-                  <Item.Image size="small" src={post.frontmatter.coverImage} />
+                <Item key={index} href={`/blog/${post.node.slug}`}>
+                  <Item.Image className="blogImage">
+                    <Img
+                      className="imageWrapper"
+                      key={post.node.coverImage.title}
+                      fluid={post.node.coverImage.fluid}
+                    ></Img>
+                  </Item.Image>
 
                   <Item.Content>
-                    <Item.Header>{post.frontmatter.title}</Item.Header>
+                    <Item.Header>{post.node.title}</Item.Header>
                     <Item.Meta>
-                      {post.frontmatter.date} -- {post.frontmatter.readTime}{' '}
-                      read
+                      {post.node.date} -- {post.node.readTime} read
                     </Item.Meta>
-                    <Item.Description>
-                      {post.frontmatter.preview}
-                    </Item.Description>
+                    <Item.Description>{post.node.preview}</Item.Description>
                     <Item.Extra>
-                      {post.frontmatter.tags.map((tag, i) => (
+                      {post.node.tags.map((tag, i) => (
                         <Label key={i}>{tag}</Label>
                       ))}
                     </Item.Extra>
@@ -49,20 +53,30 @@ const SecondPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
-      nodes {
-        frontmatter {
-          author
-          authorImage
-          coverImage
-          date(formatString: "MMMM DD, YYYY")
-          path
-          preview
+    allContentfulBlog(sort: { fields: date, order: DESC }) {
+      edges {
+        node {
+          author {
+            authorImage {
+              title
+            }
+            name
+          }
+          coverImage {
+            title
+            file {
+              url
+            }
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
+          date(formatString: "MMMM Do, YYYY")
           readTime
           tags
           title
+          slug
         }
-        html
       }
     }
   }

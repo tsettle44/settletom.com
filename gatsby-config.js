@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: `Tom Settle`,
@@ -5,58 +7,28 @@ module.exports = {
     author: `Tom Settle`,
   },
   plugins: [
+    `@contentful/gatsby-transformer-contentful-richtext`,
     `gatsby-plugin-react-helmet`,
+
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        name: `blog`,
-        path: `${__dirname}/blog`,
+        spaceId: `6j9npvulkk9y`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        downloadLocal: true,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `projects`,
-        path: `${__dirname}/projects`,
-      },
-    },
+
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-134285442-1',
+        trackingId: process.env.GOOGLE_TRACKING_ID,
         // Puts tracking script in the head instead of the body
         head: false,
       },
     },
-    `gatsby-plugin-netlify-cms`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              aliases: { sh: 'bash', js: 'javascript' },
-              showLineNumbers: true,
-              languageExtensions: [
-                {
-                  language: 'superscript',
-                  extend: 'javascript',
-                  definition: {
-                    superscript_types: /(SuperType)/,
-                  },
-                  insertBefore: {
-                    function: {
-                      superscript_keywords: /(superif|superelse)/,
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
+
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

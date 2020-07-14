@@ -2,21 +2,26 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import 'semantic-ui-css/semantic.min.css'
 import { Container, Reveal, Grid, Image, Button } from 'semantic-ui-react'
+import Img from 'gatsby-image'
 
 const Work = () => {
   return (
     <StaticQuery
       query={graphql`
         query project {
-          allMarkdownRemark(
-            sort: { fields: frontmatter___displayImage }
-            limit: 3
-          ) {
-            nodes {
-              frontmatter {
-                displayImage
-                name
-                description
+          allContentfulProject {
+            edges {
+              node {
+                coverImage {
+                  title
+                  file {
+                    url
+                  }
+                }
+                description {
+                  description
+                }
+                title
                 sourceCode
                 link
               }
@@ -37,7 +42,7 @@ const Work = () => {
             </div>
             <Grid stackable style={{ marginTop: '50px' }} divided="vertically">
               <Grid.Row columns={3}>
-                {data.allMarkdownRemark.nodes.map((project, index) => (
+                {data.allContentfulProject.edges.map((project, index) => (
                   <Grid.Column key={index}>
                     <Reveal
                       style={{
@@ -51,7 +56,8 @@ const Work = () => {
                       <Reveal.Content visible>
                         <Image
                           style={{ margin: '0' }}
-                          src={project.frontmatter.displayImage}
+                          alt={project.node.coverImage.title}
+                          src={project.node.coverImage.file.url}
                         />
                       </Reveal.Content>
                       <Reveal.Content hidden>
@@ -69,7 +75,7 @@ const Work = () => {
                               fontSize: '1.1rem',
                             }}
                           >
-                            {project.frontmatter.description}
+                            {project.node.description.description}
                           </p>
                           <Button
                             style={{
@@ -79,7 +85,7 @@ const Work = () => {
                             inverted
                             target="_blank"
                             rel="noopener noreferrer"
-                            href={project.frontmatter.link}
+                            href={project.node.link}
                           >
                             View Site
                           </Button>
@@ -91,7 +97,7 @@ const Work = () => {
                               }}
                               target="_blank"
                               rel="noopener noreferrer"
-                              href={project.frontmatter.sourceCode}
+                              href={project.node.sourceCode}
                             >
                               Source Code
                             </a>
