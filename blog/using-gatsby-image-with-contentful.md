@@ -13,7 +13,7 @@ tags:
   - Gatsby
   - Contentful
 ---
-## Why `gatsby-image` is so good and why you should be using it
+## Why `gatsby-image` is so good and why you should be using it.
 
 Recently I have been building a new site similar to a blog-style site (more of a news site), and am of course using [Gatsby](https://www.gatsbyjs.org/) and then switching my CMS to the more popular [Contentful](https://www.contentful.com/). I was able to easily set up all the content and pull it into front-end, but my site was performing poorly on the lighthouse audit because all my images where being dynamically loaded directing into a `<img src={}/>.`
 
