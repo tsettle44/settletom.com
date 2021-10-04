@@ -30,7 +30,7 @@ const ContactLabel = () => (
           </Grid.Column>
           <Grid.Column textAlign="center" verticalAlign="middle">
             <p style={{ color: 'white', fontSize: '1.25rem' }}>
-              Shoot me a message and I will absolutly get back to you. Anything
+              Shoot me a message and I will absolutely get back to you. Anything
               from help, advice, to a project proposal!
             </p>
           </Grid.Column>
